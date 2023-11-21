@@ -11,9 +11,10 @@ pipeline{
                 echo "编译。。。"
                 echo "$hello"
                 echo "${name}"
-                pwd
                 sh 'pwd && ls -alh'
                 sh 'printenv'
+                sh "echo ${GIT_BRANCH}"
+                sh "${GIT_BRANCH}"
             }
         }
         stage('代码测试') {
