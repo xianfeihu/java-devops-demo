@@ -6,6 +6,13 @@ pipeline{
     }
 
     stages {
+        stage('环境检查') {
+            steps {
+                sh 'java -version'
+                sh 'docker --version'
+                sh "mvn -v"
+            }
+        }
         stage('代码编译') {
             steps {
                 echo "编译。。。"
@@ -14,7 +21,6 @@ pipeline{
                 sh 'pwd && ls -alh'
                 sh 'printenv'
                 sh "echo ${GIT_BRANCH}"
-                sh "${GIT_BRANCH}"
             }
         }
         stage('代码测试') {
