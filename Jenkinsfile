@@ -11,6 +11,7 @@ pipeline{
                 echo "编译。。。"
                 echo "$hello"
                 echo "${name}"
+                pwd
                 sh 'pwd && ls -alh'
                 sh 'printenv'
             }
