@@ -11,6 +11,8 @@ pipeline{
                 echo "编译。。。"
                 echo "$hello"
                 echo "${name}"
+                sh 'pwd && ls -alh'
+                sh 'printenv'
             }
         }
         stage('代码测试') {
