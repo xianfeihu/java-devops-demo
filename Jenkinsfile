@@ -6,7 +6,7 @@ pipeline{
     }
 
     stages {
-        stage('环境检查') {
+        stage('环境检查1') {
             steps {
                 sh 'java -version'
                 sh 'docker --version'
